@@ -1,13 +1,17 @@
 /*
- * 
- * D - Dependency inversion principle (Principio de inversión de dependencias)
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package paquete10;
 
-public class Principal {
-
+/**
+ *
+ * @author SALA I
+ */
+public class Principal2 {
     public static void main(String[] args) {
-
+        String nombreArchivo = "api.txt";
+         
         APINetflix api = new APINetflix();
         api.establecerApiKey("123455");
 
@@ -45,7 +49,5 @@ public class Principal {
         gp4.establecerLlave(api4);
         gp4.establecerUrl("http://api.movie?api=");
         System.out.println(gp4);
-        
-
     }
 }
