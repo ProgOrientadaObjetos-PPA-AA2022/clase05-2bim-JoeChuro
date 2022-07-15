@@ -9,9 +9,10 @@ package paquete10;
  * @author SALA I
  */
 public class Principal2 {
+
     public static void main(String[] args) {
-        String nombreArchivo = "api.txt";
-         
+        String nombreArchivo = "api.data";
+
         APINetflix api = new APINetflix();
         api.establecerApiKey("123455");
 
@@ -49,5 +50,19 @@ public class Principal2 {
         gp4.establecerLlave(api4);
         gp4.establecerUrl("http://api.movie?api=");
         System.out.println(gp4);
+        
+        
+        GeneradorPeliculas[] lista = {gp, gp2, gp3, gp4};
+
+        EscrituraArchivoSecuencial archivo = 
+                new EscrituraArchivoSecuencial(nombreArchivo);
+
+        for (int i = 0; i < lista.length; i++) {
+            archivo.establecerRegistro(lista[i]);
+            archivo.establecerSalida();
+        }
+
+        archivo.cerrarArchivo();
+
     }
 }

@@ -9,5 +9,12 @@ package paquete10;
  * @author SALA I
  */
 public class Principal3 {
-    
+     public static void main(String[] args) {
+        String nombreArchivo = "api.data";
+
+        LecturaArchivoSecuencial lectura = 
+                new LecturaArchivoSecuencial(nombreArchivo);
+        lectura.establecerLista();
+        System.out.println(lectura);
+    }
 }
