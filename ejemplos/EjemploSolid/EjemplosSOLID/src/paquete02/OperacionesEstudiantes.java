@@ -13,6 +13,7 @@ import java.util.ArrayList;
 public class OperacionesEstudiantes {
     private ArrayList<Persona> estudiantes;
     private double promedioEdades;
+    private String promedioEdadesCualitativo;
     // private double edadminima;
     
     
@@ -37,5 +38,33 @@ public class OperacionesEstudiantes {
         return promedioEdades;
     }
     
-    
+     public void establecerPromedioEdadesCualitativo() {
+        
+        if (promedioEdades >= 0 && promedioEdades <= 21) {
+            promedioEdadesCualitativo = "promedio jovenes";
+        } else {
+            promedioEdadesCualitativo = "promedio adultos";
+        }
+
+    }
+
+    public String obtenerPromedioEdadesCualitativo() {
+        return promedioEdadesCualitativo;
+    }
+
+    @Override
+    public String toString() {
+        String cadena = String.format("Lista Estudiantes\n");
+
+        for (int i = 0; i < obtenerEstudiante().size(); i++) {
+            cadena = String.format("%s\nNombre Estudiante: %s",
+                    cadena,
+                    estudiantes.get(i).obtenerNombre());
+        }
+        cadena = String.format("%s\nPromedio Edades: %.2f\n"
+                + "Promedio Edades Cualitativo: %s\n",
+                cadena, promedioEdades, promedioEdadesCualitativo);
+        return cadena;
+    }
+
 }
